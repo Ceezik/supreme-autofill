@@ -1,0 +1,15 @@
+{
+    "manifest_version": 2,
+    "name": "supreme-autofill",
+    "description": "A simple Chrome extension that save your billing infos and order for you.",
+    "version": "1.0",
+    "permissions": [
+        "activeTab"
+    ],
+    "content_scripts": [
+        {
+          "matches": ["https://www.supremenewyork.com/checkout"],
+          "js": ["autofill.js"]
+        }
+    ]
+   }
