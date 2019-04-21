@@ -1,28 +1,30 @@
-const NAME = "Clément KOENIG", EMAIL = "test@test.com", PHONE = "0606060606", 
-    ADDRESS = "14 rue Bellevue", CITY = "Mulhouse", ZIP_CODE = "68200", COUNTRY = "FR"
+chrome.storage.sync.get(["infos"], function(item){
 
-const CB_TYPE = "master", CB_NUM = "5411 5211 5311 5411", CVV = "123",
-    CB_MONTH = "03", CB_YEAR = "2022"
+    const infos = item.infos
     
+    document.getElementById('order_billing_name').value = infos.name
+    document.getElementById('order_email').value = infos.email
+    document.getElementById('order_tel').value = infos.tel
 
-document.getElementById('order_billing_name').value = NAME
-document.getElementById('order_email').value = EMAIL
-document.getElementById('order_tel').value = PHONE
-document.getElementById('bo').value = ADDRESS
-document.getElementById('order_billing_city').value = CITY
-document.getElementById('order_billing_zip').value = ZIP_CODE
-document.getElementById('order_billing_country').value = COUNTRY
+    document.getElementById('bo').value = infos.address
+    document.getElementById('oba3').value = infos.address2
+    document.getElementById('order_billing_address_3').value = infos.address3
+    document.getElementById('order_billing_city').value = infos.city
+    document.getElementById('order_billing_zip').value = infos.zip_code
+    document.getElementById('order_billing_country').value = infos.country
 
-document.getElementById('credit_card_type').value = CB_TYPE
-document.getElementById('cnb').value = CB_NUM
-document.getElementById('vval').value = CVV
-document.getElementById('credit_card_month').value = CB_MONTH
-document.getElementById('credit_card_year').value = CB_YEAR
+    document.getElementById('credit_card_type').value = infos.cb_type
+    document.getElementById('cnb').value = infos.cb_number
+    document.getElementById('vval').value = infos.cvv
+    document.getElementById('credit_card_month').value = infos.cb_month
+    document.getElementById('credit_card_year').value = infos.cb_year
 
-document.getElementById('order_terms').checked = true
-document.getElementsByClassName('icheckbox_minimal')[1].className = "icheckbox_minimal checked"
+    document.getElementById('order_terms').checked = true
+    document.getElementsByClassName('icheckbox_minimal')[1].className = "icheckbox_minimal checked"
 
-document.getElementsByName('commit')[0].click()
+    document.getElementsByName('commit')[0].click()
+
+})
 
 
 
