@@ -1,16 +1,21 @@
 let infos = { "name": "", "email": "", "tel": "", "address": "",
         "address2": "",  "address3": "", "city": "", "zip_code": "",
-        "country": "", "cb_type": "", "cb_number": "",
-        "cb_month": "", "cb_year": "", "cvv": "" }
+        "country": "GB", "cb_type": "visa", "cb_number": "",
+        "cb_month": "12", "cb_year": new Date().getFullYear(), "cvv": "" }
 
 chrome.storage.sync.get(["infos"], function(item){
-    if(Object.keys(item).length > 0) {
+    //if(Object.keys(item.name).length > 0) {
         infos = item.infos
         loadData()
-    }
+    //}
 })
 
-document.getElementById('saveData').onclick = saveData 
+document.getElementById('saveData').onclick = handleForm
+document.getElementById('deleteData').onclick = deleteData
+
+function handleForm() {
+    saveData()
+}
 
 function saveData() {
 
@@ -51,4 +56,12 @@ function loadData() {
     document.getElementsByName('cb_month')[0].value = infos.cb_month
     document.getElementsByName('cb_year')[0].value = infos.cb_year
     document.getElementsByName('cvv')[0].value = infos.cvv
+}
+
+function deleteData() {
+    infos = { "name": "", "email": "", "tel": "", "address": "",
+        "address2": "",  "address3": "", "city": "", "zip_code": "",
+        "country": "GB", "cb_type": "visa", "cb_number": "",
+        "cb_month": "12", "cb_year": new Date().getFullYear(), "cvv": "" }
+    chrome.storage.sync.set({'infos': infos});
 }
