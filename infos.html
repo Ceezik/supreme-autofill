@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8"/>
-    </head>
 
-    <body>
-        <section>
-            <input name="name" type="text" placeholder="full name"/>
-            <input name="email" type="email" placeholder="email"/>
-            <input name="phone" type="tel" placeholder="tel"/>
-        </section>
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
 
-        <section>
-            <input name="address" type="text" placeholder="address"/>
-            <input name="address2" type="text" placeholder="address 2"/>
-            <input name="address3" type="text" placeholder="address 3"/>
-            <input name="city" type="text" placeholder="city"/>
-            <input name="zip_code" type="text" placeholder="ZIP code"/>
+<body>
+    <p>personal details</p>
+    <section>
+            <div class="col">
+                    <input name="name" type="text" placeholder="full name" required/>
+                </div>
+            
+    <div class="col-2">
+        <input name="email" type="email" placeholder="email" required/>
+        <input name="phone" type="tel" placeholder="tel" required/>
+    </div>
+    </section>
+
+    <p>shipping address</p>
+    <section>
+        <div class="col-2">
+            <input name="address" type="text" placeholder="address" required/>
+            <input name="address2" type="text" placeholder="address 2" />
+            <input name="address3" type="text" placeholder="address 3" />
+            <input name="city" type="text" placeholder="city" required/>
+            <input name="zip_code" type="text" placeholder="ZIP code" required/>
             <select name="country">
                 <option value="GB">UK</option>
                 <option value="NB">UK (N. IRELAND)</option>
@@ -54,9 +64,13 @@
                 <option value="CH">SWITZERLAND</option>
                 <option value="TR">TURKEY</option>
             </select>
-        </section>
+        </div>
+    </section>
+    
 
-        <section>
+    <p>billing details</p>
+    <section>
+        <div class="col-2">
             <select name="cb_type">
                 <option value="visa">Visa</option>
                 <option value="american_express">American Express</option>
@@ -64,7 +78,10 @@
                 <option value="solo">Solo</option>
                 <option value="paypal">PayPal</option>
             </select>
-            <input name="cb_number" type="text" placeholder="card number"/>
+            <input name="cb_number" type="text" placeholder="card number" required/>
+        </div>
+        
+        <div class="col-3">
             <select name="cb_month">
                 <option value="01">01</option>
                 <option value="02">02</option>
@@ -92,13 +109,19 @@
                 <option value="2028">2028</option>
                 <option value="2029">2029</option>
             </select>
-            <input name="cvv" type="text" placeholder="CVV"/>
-        </section>
+            <input name="cvv" type="text" placeholder="CVV" required/>
+        </div>
+    </section>
+    
 
-        <section>
-            <button type="submit" id="saveData">Save</button>
-        </section>
-    </body>
+    <div class="wrapper">
+        <button type="submit" id="saveData">save</button>
+        <button type="submit" id="deleteData">delete data</button>
+    </div>
+    
 
-    <script src="js/saveData.js"></script>
+</body>
+
+<script src="js/saveData.js"></script>
+
 </html>

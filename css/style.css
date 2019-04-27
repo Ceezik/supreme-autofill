@@ -1,0 +1,80 @@
+@import url(http://fr.allfont.net/allfont.css?fonts=courier-new);
+
+body {
+    font-family: 'Courier New', Courier, arial;
+}
+
+button:focus, select:focus, input:focus {
+    outline: none;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.09), 0 1px 2px rgba(0,0,0,0.11);
+} 
+
+p {
+    font-size: 0.90rem;
+    margin-bottom: 0;
+    background-color: red;
+    color : white;
+    padding: 0.75rem 1rem;
+}
+
+section {
+    padding: 0 1rem 1rem 1rem;
+    background-color: #fcfcfc;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.09), 0 1px 2px rgba(0,0,0,0.11);
+}
+
+.col, .col-2, .col-3 {
+    margin-top: 0.75rem;
+    display: grid;
+    grid-gap: 1rem;
+}
+
+.col-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.col-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+input, select {
+    color : #111;
+    padding: 0.30rem 0.55rem;
+    border : 1px solid #CCC;
+    border-radius: 3px;
+}
+
+.wrapper {
+    margin-top : 1rem;
+}
+
+button {
+    font-family: 'Courier New', Courier, arial;
+    border : none;
+    width: auto;
+    padding: 0.6rem 1.2rem;
+    transition: all 0.3s ease;
+    -webkit-appearance: button;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.wrapper button:nth-child(1) {
+    background-color: red;
+    color : white;
+}
+
+.wrapper button:nth-child(1):hover {
+    background-color: rgb(219, 3, 3);
+}
+
+.wrapper button:nth-child(2) {
+    background-color: rgb(34, 34, 34);
+    color : white;
+}
+
+.wrapper button:nth-child(2):hover {
+    background-color: rgb(17, 17, 17);
+}
