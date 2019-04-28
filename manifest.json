@@ -3,6 +3,12 @@
     "name": "supreme-autofill",
     "description": "A simple Chrome extension which save your billing infos and order for you.",
     "version": "1.0",
+    "icons": { 
+        "16" : "img/icon_16.png",
+        "32" : "img/icon_32.png",
+        "48" : "img/icon_48.png",
+        "128" : "img/icon_128.png"
+    },
     "permissions": [
         "activeTab",
         "storage"
