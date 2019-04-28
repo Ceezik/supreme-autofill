@@ -1,14 +1,14 @@
 {
     "manifest_version": 2,
     "name": "supreme-autofill",
-    "description": "A simple Chrome extension that save your billing infos and order for you.",
+    "description": "A simple Chrome extension which save your billing infos and order for you.",
     "version": "1.0",
     "permissions": [
         "activeTab",
         "storage"
     ],
     "browser_action": {
-        "default_popup": "infos.html"
+        "default_popup": "index.html"
        },
     "content_scripts": [
         {

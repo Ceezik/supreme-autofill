@@ -10,12 +10,8 @@ chrome.storage.sync.get(["infos"], function(item){
     //}
 })
 
-document.getElementById('saveData').onclick = handleForm
+document.getElementById('saveData').onclick = saveData
 document.getElementById('deleteData').onclick = deleteData
-
-function handleForm() {
-    saveData()
-}
 
 function saveData() {
 
@@ -64,4 +60,5 @@ function deleteData() {
         "country": "GB", "cb_type": "visa", "cb_number": "",
         "cb_month": "12", "cb_year": new Date().getFullYear(), "cvv": "" }
     chrome.storage.sync.set({'infos': infos});
+    document.location.reload(true);
 }
