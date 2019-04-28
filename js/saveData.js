@@ -4,14 +4,13 @@ let infos = { "name": "", "email": "", "tel": "", "address": "",
         "cb_month": "12", "cb_year": new Date().getFullYear(), "cvv": "" }
 
 chrome.storage.sync.get(["infos"], function(item){
-    //if(Object.keys(item.name).length > 0) {
-        infos = item.infos
-        loadData()
-    //}
+    infos = item.infos
+    loadData()
 })
 
 document.getElementById('saveData').onclick = saveData
 document.getElementById('deleteData').onclick = deleteData
+document.getElementById('closePopup').onclick = popOut
 
 function saveData() {
 
@@ -33,6 +32,7 @@ function saveData() {
     infos.cvv = document.getElementsByName('cvv')[0].value
 
     chrome.storage.sync.set({ "infos": infos })
+    popIn()
 }
 
 function loadData() {
@@ -61,4 +61,17 @@ function deleteData() {
         "cb_month": "12", "cb_year": new Date().getFullYear(), "cvv": "" }
     chrome.storage.sync.set({'infos': infos});
     document.location.reload(true);
+}
+
+function popIn() {
+    const popUpElt = document.getElementById('popUp')
+    popUpElt.style.opacity = 1
+    popUpElt.style.top = 0
+    setTimeout(popOut, 3000)
+}
+
+function popOut() {
+    const popUpElt = document.getElementById('popUp')
+    popUpElt.style.opacity = 1
+    popUpElt.style.top = '-100px'
 }

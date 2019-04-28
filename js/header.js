@@ -1,10 +1,10 @@
-document.getElementById('close').onclick = closePopup
+document.getElementById('closeWindow').onclick = closeWindow
 let back = document.getElementById('back')
 if(back != null) {
     back.onclick = getBack
 }
 
-function closePopup() {
+function closeWindow() {
     window.close()
 }
 
